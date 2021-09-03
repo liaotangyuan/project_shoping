@@ -1,0 +1,323 @@
+/* common.css文件是用来放我们公共的样式的，只要多个页面共有的样式都可以在这里写一起引用——模块化思想 */
+/* 声明图标字体,注意路径的变化 */
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?tomleg');
+    src:  url('../fonts/icomoon.eot?tomleg#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?tomleg') format('truetype'),
+      url('../fonts/icomoon.woff?tomleg') format('woff'),
+      url('../fonts/icomoon.svg?tomleg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+/* 版心 */
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.style_red {
+    color: #c81623;
+}
+/* 侧边栏 */
+.slider-bar {
+    position: absolute;
+    right: 0;
+    top: 300px;
+    width: 245px;
+    height: 72px;
+    padding-left: 200px;
+    /*添加overflow: hidden主要是为了让.con在回到右侧的时候不显示不占空间位置，不然页面会被撑开*/
+    overflow: hidden;       
+}
+.sliderbar {
+    width: 45px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    color: #fff;
+    background-color: purple;
+}
+
+
+.con {
+    position: absolute;
+    left: 200;
+    top: 0;
+    width: 200px;
+    height: 40px;
+    background-color: purple;
+    color: #fff;
+    z-index: -1 ;
+}
+.con:hover {
+    color: skyblue;
+}
+.go-back {
+    display: none;
+    position: absolute;
+    width: 45px;
+    height: 32px;
+    text-align: center;
+    line-height: 30px;
+    border-top: 2px solid #fff;
+    margin: 0px;
+    background-color: purple;
+    color: #fff;
+    font-size: 16px;
+    /*鼠标经过显示小手*/
+    cursor: pointer;
+}
+.go-back:hover {
+    color: red;
+}
+/* 快捷导航模块 */
+.shortcut {
+    height: 31px;
+    line-height: 31px;
+    background-color: #f1f1f1;
+}
+.shortcut ul li {
+    float: left;
+}
+/* 获取到所有偶数的li标签 */
+.shortcut .fr ul li:nth-child(even) {
+    width: 1px;
+    height: 12px;
+    background-color: #666;
+    margin: 9px 15px 0;
+}
+.array_icon::after {
+    content: '\e91e';
+    font-family: 'icomoon';
+    margin-left: 6px;
+
+}
+/* header部分 */
+.header {
+    /* 子绝父相 */
+    position: relative;
+    height: 105px;
+}
+.logo {
+    position: absolute;
+    top: 25px;
+    width: 171px;
+    height: 61px;
+}
+.logo a {
+    display: block;
+    width: 171px;
+    height: 61px;
+    background: url(../images/logo.png) no-repeat;
+    /* a标签里面放了文字可以优化搜索引擎，但是文字不要显示出来 */
+    font-size: 0;
+}
+.search {
+    position: absolute;
+    left: 346px;
+    top: 25px;
+    width: 538px;
+    height: 36px;
+    border: 2px solid #b1191a;
+}
+.search input {
+    float: left;
+    width: 454px;
+    height: 32px;
+    padding-left: 10px;
+}
+.search button {
+    float: left;
+    width: 80px;
+    height: 32px;
+    background-color: #b1191a;
+    font-size: 16px;
+    color: #fff;
+}
+.hotwords {
+    position: absolute;
+    left: 346px;
+    top: 66px;
+}
+.hotwords a {
+    margin: 0 10px;
+}
+.shopcar {
+    position: absolute;
+    right: 60px;
+    top: 25px;
+    width: 140px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border: 1px solid #dfdfdf;
+    background-color: #f7f7f7;
+}
+/* 在“我的购物车”前面插入购物车的字体图标 */
+.shopcar::before {
+    font-family: 'icomoon';
+    content: '\e93a';
+    margin-right: 5px;
+    color: #b1191a;
+}
+/* 在“我的购物车”后面插入小三角的字体图标 */
+.shopcar::after {
+    font-family: 'icomoon';
+    content: '\e920';
+    margin-left: 10px;
+}
+/* 购物车的件数的小图标样式 */
+.cont {
+    position: absolute;
+    top: -5px;
+    left: 105px;
+    height: 14px;
+    line-height: 14px;
+    color: #fff;
+    background-color: #e60012;
+    padding: 0 5px;
+    border-radius: 7px 7px 7px 0;
+}
+/* nav模块 */
+.nav {
+    height: 47px;
+    border-bottom: 2px solid #b1191a;
+}
+.nav .dropdown {
+    float: left;
+    width: 210px;
+    height: 45px;
+    background-color: #b1191a;
+
+}
+.nav .navitems {
+    float: left;
+    height: 45px;
+}
+.dropdown .dt {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 45px;
+}
+.dropdown .dd {
+    width: 210px;
+    height: 465px;
+    background-color: #c81623;
+    margin-top: 2px;
+}
+.dropdown .dd ul li {
+    position: relative;
+    height: 31px;
+    line-height: 31px;
+    margin-left: 2px;
+    padding-left: 10px;
+}
+/* 全部商品分类里面的每一个Li中右侧都有一个小三角，用伪元素来做最好 */
+.dropdown .dd ul li::after {
+    position: absolute;
+    top: 1px;
+    right: 10px;
+    font-family: 'icomoon';
+    content: '\e920';
+    color: #fff;
+    font-size: 14px;
+
+}
+.dropdown .dd ul li:hover {
+    background-color: #fff;
+}
+.dropdown .dd ul li:hover a {
+    color: #c81623;
+}
+.dropdown .dd ul li a {
+    color: #fff;
+    font-size: 14px;
+}
+.navitems ul li {
+    float: left;
+}
+.navitems ul li a {
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    font-size: 16px;
+    /* 因为每一个li中的文字是不一样多的，所以li并没有写死宽度，宽度让内容加上padding撑开li即可 */
+    padding: 0 25px;
+}
+
+/* footer底部模块 */
+.footer {
+    height: 415px;
+    background-color: #f5f5f5;
+    padding-top: 30px;
+}
+.footer .mod_service {
+    height: 80px;
+    border-bottom: 1px solid #ccc;
+}
+.mod_service ul li {
+    float: left;
+    width: 300px;
+    height: 50px;
+    padding-left: 35px;
+}
+.mod_service ul li h5 {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 8px;
+    background: url(../images/icons.png) no-repeat -252px -2px;
+}
+.service_txt h4 {
+    font-size: 14px;
+}
+.service_txt p {
+    font-size: 12px;
+}
+.footer .mod_help {
+    height: 185px;
+    border-bottom: 1px solid #ccc;
+    padding-top: 20px;
+    padding-left: 50px;
+}
+.footer .mod_help dl {
+    float: left;
+    width: 200px;
+}
+/* 单独选出最后一个dl重新设置样式，因为它和之前的dl有区别 */
+.footer .mod_help dl:last-child {
+    width: 90px;
+    text-align: center;
+}
+.footer .mod_help dl dt {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.footer .mod_help dl dd {
+    font-size: 12px;
+}
+.mod_copyright {
+    text-align: center;
+    padding-top: 20px;
+}
+.mod_copyright .links {
+    margin-bottom: 15px;
+}
+.mod_copyright .links a,span{
+    margin-left: 3px;
+}
+
+.mod_copyright .copyright {
+    line-height: 20px;
+}
